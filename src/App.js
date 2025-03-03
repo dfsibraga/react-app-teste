@@ -1,7 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    console.log("START");
+    console.log("environment variables: ", process.env);
+    console.log(process.env.REACT_APP_my_var);
+    console.log("development variable: ", process.env.REACT_APP_my_second_var);
+    console.log(
+      "production variable: ",
+      process.env.REACT_APP_my_production_var
+    );
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
